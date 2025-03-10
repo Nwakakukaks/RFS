@@ -125,7 +125,9 @@ export async function createImage({
       characterId,
       createdAt: new Date().toISOString(),
       eventName: "image_created",
-      metadata: {},
+      metadata: {
+        url: url,
+      },
     });
 
     await sendCharacterMessage(

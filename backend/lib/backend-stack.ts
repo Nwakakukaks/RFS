@@ -130,7 +130,7 @@ export class SonicStack extends cdk.Stack {
         ],
         allowOrigins: [
           "http://localhost:3000",
-          "https://versionone1.vercel.app",
+          "https://versionone-kappa.vercel.app/",
         ],
       },
       disableExecuteApiEndpoint: false,

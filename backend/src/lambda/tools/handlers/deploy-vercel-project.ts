@@ -42,8 +42,7 @@ async function createGithubRepo(repoName: string, description: string) {
 }
 
 /**
- * Publishes a project on Vercel by first creating a GitHub repository, then triggering a deployment.
- * Called by Risha (or Qwen if needed) after the frontend/backend is ready.
+ * Publishes a project on Vercel by first creating a GitHub repository.
  */
 export async function publishProjectOnVercel(inputData: {
   projectName: string;
@@ -78,6 +77,13 @@ export async function publishProjectOnVercel(inputData: {
         github_repo: repoData.htmlUrl,
       },
     });
+
+    if (process.env.RUN_VERCEL_DEPLOY !== "true") {
+      return {
+        message: "GitHub repo created successfully.",
+        repoUrl: repoData.htmlUrl,
+      };
+    }
 
     await sendCharacterMessage(
       inputData.characterId,

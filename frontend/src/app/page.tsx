@@ -184,10 +184,10 @@ const LandingPage: React.FC = () => {
         {/* Hero Section */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
           <h1 className="text-3xl md:text-4xl lg:text-6xl font-extrabold text-gray-50 mb-3">
-            AI Agent to Build v1 of Any Idea;
+            Launch a Working Prototype of 
           </h1>
           <h1 className="text-3xl md:text-4xl lg:text-6xl font-extrabold text-gray-50 mb-6">
-            Commit Only When Validated
+           Any Idea in Minutes With Agents
           </h1>
           <div className="flex flex-col items-center gap-2">
             <img

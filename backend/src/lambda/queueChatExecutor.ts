@@ -63,14 +63,14 @@ const getModelId = (agentName: string) => {
 export default getModelId;
 
 const recursiveOptions = {
-  maxRecursions: 15,
+  maxRecursions: 12,
 };
 
 export interface InvokeModelPayload {
   connectionId: string;
   stage: string;
   domainName: string;
-  chatMode: "RECURSIVE" | "STANDARD";
+  chatMode: "RECURSIVE" | "STANDARD" | "VOICE";
   sendersWalletAddress: string;
   createdBy: string;
   characterId: string;
@@ -103,7 +103,7 @@ const pearlAgent = new BedrockLLMAgent({
 });
 pearlAgent.setSystemPrompt(INTERFACE_DESIGNER_PROMPT);
 
-// Jaden Agent
+// Jaden Agent (Defi Analyst)
 const jadenAgent = new BedrockLLMAgent({
   name: "Jaden",
   streaming: false,
@@ -202,7 +202,6 @@ orchestrator.addAgent(qwenAgent);
 orchestrator.addAgent(pearlAgent);
 orchestrator.addAgent(rishaAgent);
 
-// Let Risha be the default agent
 orchestrator.setDefaultAgent(rishaAgent);
 
 async function streamResponseToCharacter(
@@ -254,7 +253,7 @@ const handleMessage = async (
   sessionId: string,
   createdBy: string,
   characterId: string,
-  mode: "RECURSIVE" | "STANDARD",
+  mode: "RECURSIVE" | "STANDARD" | "VOICE",
   sendersWalletAddress: string,
   data: string,
   currentRecursion: number
@@ -318,22 +317,6 @@ const handleMessage = async (
 
       Only use the <metadata> as extra context. Do not consider the metadata as part of the agent selection or routing process. Here is the message:
       <message>New message from: ${characterId}: ${data}</message>`;
-
-    // Use the retry helper to call routeRequest
-    // const response = await routeRequestWithRetry(
-    //   message,
-    //   createdBy,
-    //   sessionId,
-    //   {
-    //     characterId,
-    //     createdBy,
-    //     sessionId,
-    //     sendersWalletAddress,
-    //     wallets: wallets
-    //       .map((w) => `${w.agent}: ${w.address || null}`)
-    //       .join(", "),
-    //   }
-    // );
 
     // const message = _event.data
     const response = await orchestrator.routeRequest(
@@ -423,7 +406,7 @@ const handleMessage = async (
       return;
     }
 
-    if (mode === "RECURSIVE") {
+    if (mode === "RECURSIVE" || mode === "VOICE") {
       await new Promise((resolve) => setTimeout(resolve, 5000));
       return await handleMessage(
         sessionId,
