@@ -140,4 +140,6 @@ We’re not stopping here. VersionOne isn’t just a hackathon project—it’s 
 VersionOne makes it **stupidly easy** to build and validate ideas. **No more wasted time. No more blind bets.** Just chat with agents, launch your idea, and get real user feedback.
 
 
-Hey Guys, I have an idea for a Dapp called PiggyBlock for kids to save money on the blockchain like a piggy bank. 
+## Sample Prompt
+
+- Hey guys i have an idea, a defi app call PiggyBlock for little kids to save money on the blockchain like piggy bank

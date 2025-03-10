@@ -187,7 +187,7 @@ const LandingPage: React.FC = () => {
             Launch a Working Prototype of 
           </h1>
           <h1 className="text-3xl md:text-4xl lg:text-6xl font-extrabold text-gray-50 mb-6">
-           Any Idea in Minutes With Agents
+           Any Dapp in Minutes With Agents
           </h1>
           <div className="flex flex-col items-center gap-2">
             <img
