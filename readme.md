@@ -36,15 +36,15 @@ Forget spending months building something no one wants. With VersionOne, you can
 
 Each agent specializes in a different task, working together seamlessly to bring your idea to life:
 
-🔹 **Product Manager (Risha):** Breaks down your idea into a **Minimum Viable Product (MVP)** and creates the project scope.
+🔹 **Product Manager:** Breaks down your idea into a **Minimum Viable Product (MVP)** and creates the project scope.
 
-🔹 **Software Engineer (Qwen):** Writes **smart contracts, deploys your dApp, builds the frontend, and manages wallets**.
+🔹 **Software Engineer:** Writes **smart contracts, deploys your dApp, builds the frontend, and manages wallets**.
 
-🔹 **Market Analyst (Jaden):** Analyzes market trends and suggests features that increase **user adoption**.
+🔹 **Market Analyst:** Analyzes market trends and suggests features that increase **user adoption**.
 
-🔹 **Interface Designer (Pearl):** Creates your project’s **branding, UI/UX design, and interface**.
+🔹 **Interface Designer:** Creates your project’s **branding, UI/UX design, and interface**.
 
-🔹 **Growth Expert (Monad):** Writes **marketing tweets, engages users, and drives traction**.
+🔹 **Growth Expert:** Writes **marketing tweets, engages users, and drives traction**.
 
 
 ### Actions Agents Can Perform:
